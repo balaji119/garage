@@ -7,6 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using garage.Persistence;
+using AutoMapper;
 
 namespace garage
 {
@@ -22,6 +23,8 @@ namespace garage
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAutoMapper(typeof(Startup));
+
             services.AddDbContext<garageDbContext>(options=> options.UseSqlServer(Configuration["ConnectionStrings:Default"]));
             services.AddControllersWithViews();
             // In production, the Angular files will be served from this directory

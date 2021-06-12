@@ -1,1 +1,14 @@
-<p>vehicle-form works!</p>
+<h1>New Vehicle</h1>
+<form action="">
+    <div class="form-group">
+        <label for="Make">Make</label>
+        <select id="Make" class="form-control">
+            <option value=""></option>
+            <option *ngFor="let m of makes" value="{{m.id}}">{{m.name}}</option>
+        </select>
+    </div>
+    <div class="from-group">
+        <label for="Make">Model</label>
+        <select id="Make" class="form-control"></select>
+    </div>
+</form>
